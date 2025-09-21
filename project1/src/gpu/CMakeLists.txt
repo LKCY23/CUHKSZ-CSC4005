@@ -1,7 +1,7 @@
 # Required packages and flags
 ## CUDA
-set(CMAKE_CUDA_COMPILER "/opt/nvidia/hpc_sdk/Linux_x86_64/23.7/compilers/bin/nvcc")
-set(CUDA_TOOLKIT_ROOT_DIR "/opt/nvidia/hpc_sdk/Linux_x86_64/23.7/cuda/12.2")
+set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
+set(CUDA_TOOLKIT_ROOT_DIR "/usr/local/cuda")
 enable_language(CUDA)  # 启用CUDA支持
 find_package(CUDA REQUIRED)
 if (CUDA_FOUND)
@@ -33,7 +33,7 @@ cuda_add_executable(cuda_PartC
 target_link_libraries(cuda_PartC cudart)
 
 ## OpenACC
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -acc -ta=tesla:nofma")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -acc -gpu=nofma")
 add_executable(openacc_PartA
         openacc_PartA.cpp
         ../utils.cpp ../utils.hpp)

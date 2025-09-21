@@ -26,7 +26,7 @@ echo "Sequential PartC Structure-of-Array (Optimized with -O2)"
 srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/sequential_PartC_soa ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
 echo ""
 
-# Vectorization PartB
+# Vectorization PartC
 echo "Vectorization PartC (Optimized with -O2)"
 srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/vectorize_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
 echo ""
