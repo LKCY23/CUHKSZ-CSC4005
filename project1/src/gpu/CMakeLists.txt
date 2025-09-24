@@ -32,8 +32,13 @@ cuda_add_executable(cuda_PartC
         ../utils.cpp ../utils.hpp)
 target_link_libraries(cuda_PartC cudart)
 
+cuda_add_executable(cuda_PartC_global
+        cuda_PartC_global.cu
+        ../utils.cpp ../utils.hpp)
+target_link_libraries(cuda_PartC_global cudart)
+
 ## OpenACC
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -acc -gpu=nofma")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -acc -gpu=nofma -gpu=cc80 -Minfo=accel")
 add_executable(openacc_PartA
         openacc_PartA.cpp
         ../utils.cpp ../utils.hpp)
